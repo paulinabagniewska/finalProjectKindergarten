@@ -1,6 +1,8 @@
 package pl.coderslab.finalproject.absence;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.coderslab.finalproject.child.Child;
 
@@ -9,6 +11,8 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 @Entity
 @Table (name = "absence")

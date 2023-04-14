@@ -1,9 +1,7 @@
 package pl.coderslab.finalproject.group;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/group")
@@ -11,11 +9,12 @@ public class GroupController {
     private final GroupRepository groupRepository;
 
     public GroupController(GroupRepository groupRepository) {
+
         this.groupRepository = groupRepository;
     }
-    @GetMapping("/save-group")
+    @PostMapping ("/add-group")
     @ResponseBody
-    public void saveGroup (Group group){
+    public void addGroup (Group group){
         groupRepository.save(group);
     }
     @GetMapping("/update-group")

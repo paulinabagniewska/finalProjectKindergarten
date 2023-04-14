@@ -1,5 +1,6 @@
 package pl.coderslab.finalproject.parent;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,8 +13,10 @@ import java.util.List;
 
 
 @Getter
-@NoArgsConstructor
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
 @Entity
 @Table (name = "Parent")
 public class Parent {
