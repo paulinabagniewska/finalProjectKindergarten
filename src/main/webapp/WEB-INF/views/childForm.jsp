@@ -5,7 +5,6 @@
     <title>Child form</title>
 </head>
 <body>
-<body>
 <h1>Child Form</h1>
 <form method="post" action="/child/add">
   <label for="id">ID:</label>
