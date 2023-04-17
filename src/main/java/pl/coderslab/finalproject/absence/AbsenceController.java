@@ -21,14 +21,8 @@ public class AbsenceController {
     }
   @RequestMapping("/absence/add")
   @ResponseBody
-   public String addAbsence() {
-   Absence absence = new Absence();
-      LocalDate startsOfAbsence =  LocalDate.of(2023,5,2);
-      LocalDate endsOfAbsence = LocalDate.of(2023,5,5);
-      absence.setStartsOfAbsence(startsOfAbsence);
-      absence.setEndsOfAbsence(endsOfAbsence);
-      absence.setCauseOfAbsence("przeziębienie");
-      absence.setChild(new Child());
+   public String addAbsence(Absence absence) {
+
       absenceDao.saveAbsence(absence);
       return "Id dodanej nieobecności to:"
               + absence.getId();

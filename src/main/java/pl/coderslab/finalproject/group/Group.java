@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "group")
+@Table(name = "childrenGroup")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

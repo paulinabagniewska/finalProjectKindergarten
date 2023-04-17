@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -5,12 +6,19 @@
     <title>Announcement Form</title>
 </head>
 <body>
-<h1>Announcement </h1>
-<form method="post" action="/announcement/add">
-  <label for="description">Description:</label>
-  <input type="text" id="description" name="description" value="">
-  <br>
-  <input type="submit" value="Save">
-</form>
+<h3>Welcome, Enter The Announcement Description</h3>
+<form:form method="POST"
+           action="/announcement/add" modelAttribute="announcement">
+    <table>
+        <tr>
+            <td><form:label path="description">
+                Description</form:label></td>
+            <td><form:textarea path="description"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Save"/></td>
+        </tr>
+    </table>
+</form:form>
 </body>
 </html>
