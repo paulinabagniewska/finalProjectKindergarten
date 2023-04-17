@@ -6,11 +6,9 @@
     <title>Absence form </title>
 </head>
 <body>
-<h1>Absence Form</h1>
+<h1>Absence </h1>
 <form method="post" action="/absence/add">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" value="">
-    <br>
+
     <label for="startsOfAbsence">Starts of Absence:</label>
     <input type="date" id="startsOfAbsence" name="startsOfAbsence" value="">
     <br>

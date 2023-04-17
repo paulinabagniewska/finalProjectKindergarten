@@ -6,9 +6,6 @@
 </head>
 <body>
 <form method="post" action="/group/add">
-  <label for="id">ID:</label>
-  <input type="text" id="id" name="id" value="">
-  <br>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" value="">
   <br>

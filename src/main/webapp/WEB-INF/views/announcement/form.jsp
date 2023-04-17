@@ -5,11 +5,8 @@
     <title>Announcement Form</title>
 </head>
 <body>
-<h1>Announcement Form</h1>
+<h1>Announcement </h1>
 <form method="post" action="/announcement/add">
-  <label for="id">ID:</label>
-  <input type="text" id="id" name="id" value="">
-  <br>
   <label for="description">Description:</label>
   <input type="text" id="description" name="description" value="">
   <br>

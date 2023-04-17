@@ -7,9 +7,6 @@
 <body>
 <h1>Child Form</h1>
 <form method="post" action="/child/add">
-  <label for="id">ID:</label>
-  <input type="text" id="id" name="id" value="">
-  <br>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" value="">
   <br>
