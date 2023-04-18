@@ -2,11 +2,7 @@ package pl.coderslab.finalproject.announcement;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 import java.util.List;
 
 
@@ -21,20 +17,41 @@ public class AnnouncementController {
     }
 
     @GetMapping("/add")
-    public String showForm(Model model) {
+    public String addAnnouncement(Model model) {
         Announcement announcement = new Announcement();
         model.addAttribute("announcement", announcement);
         return "announcement/form";
     }
 
-   @GetMapping("/save")
-    public  String savedAnnouncement (@Valid @ModelAttribute ("announcement") Announcement announcement,
-                                      BindingResult result, ModelMap model){
-        if(result.hasErrors()){
-            return "errors";
-        }
-        model.addAttribute("id", announcement.getId());
-        model.addAttribute("description", announcement.getDescription());
-        return "view";
-   }
+    @PostMapping("/save")
+    public String saveAnnouncement(Announcement announcement) {
+        announcementDao.saveAnnouncement(announcement);
+        return "announcement/view";
+    }
+
+    @PostMapping("/delete")
+    public String deleteAnnouncement(Announcement announcement) {
+        announcementDao.deleteAnnouncement(announcement);
+        return "announcement/list";
+    }
+    @GetMapping("/list")
+    public String getList( Model model){
+       List <Announcement> announcements = announcementDao.findAll();
+        model.addAttribute("announcements", announcements);
+        return  "announcement/list";
+    }
+    @PostMapping("delete/{id}")
+    public  String deleteAnnouncement(@PathVariable Long id, Model model){
+        announcementDao.delete(id);
+        List<Announcement> announcements = announcementDao.findAll();
+        model.addAttribute("announcements", announcements);
+        return "announcement/list";
+    }
+    @PostMapping ("/update")
+    public String updateAnnouncement( @RequestBody Announcement announcement, Model model){
+        announcementDao.saveAnnouncement(announcement);
+        List <Announcement> announcements = announcementDao.findAll();
+        model.addAttribute("announcements", announcements);
+        return "announcement/list";
+    }
 }

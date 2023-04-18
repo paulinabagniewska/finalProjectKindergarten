@@ -1,39 +1,25 @@
 package pl.coderslab.finalproject.child;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import pl.coderslab.finalproject.absence.Absence;
+import org.springframework.stereotype.Service;
+import pl.coderslab.finalproject.announcement.Announcement;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
-import java.awt.print.Book;
-import java.util.List;
 
-@Repository
-@Transactional
+@Service
 public class ChildDao {
-    @PersistenceContext
-    EntityManager entityManager;
-    public void saveChild(Child child) {
-        entityManager.persist(child);
-    }
+  private ChildRepository childRepository;
 
-    public Child findById(long id) {
-        return entityManager.find(Child.class, id);
-    }
+  @Autowired
+    public ChildDao(ChildRepository childRepository){
 
-    public void update(Child child) {
-        entityManager.merge(child);
-    }
+    this.childRepository = childRepository;
+  }
+  public  Child saveChild (Child newChild){
 
-    public void delete(Child child) {
-        entityManager.remove(entityManager.contains(child) ?
-                child : entityManager.merge(child));
-    }
-    public List<Child> findAll() {
-        Query select = entityManager
-                .createQuery("SELECT c from Child c");
-        return select.getResultList();
-    }
+    return childRepository.save(newChild);
+  }
+  public Child child (Child newChild){
+    return childRepository.save(newChild);
+  }
 }

@@ -8,7 +8,7 @@
 <body>
 <h3>Welcome, Enter The Announcement Description</h3>
 <form:form method="POST"
-           action="/announcement/add" modelAttribute="announcement">
+           action="/announcement/save"   modelAttribute ="announcement">
     <table>
         <tr>
             <td><form:label path="description">

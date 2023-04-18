@@ -1,6 +1,7 @@
 package pl.coderslab.finalproject.absence;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,8 +10,7 @@ import javax.transaction.Transactional;
 import java.awt.print.Book;
 import java.util.List;
 
-@Repository
-@Transactional
+@Service
 public class AbsenceDao {
     @PersistenceContext
     EntityManager entityManager;

@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -5,31 +7,43 @@
     <title>Child form</title>
 </head>
 <body>
-<h1>Child Form</h1>
-<form method="post" action="/child/add">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" value="">
-  <br>
-  <label for="surname">Surname:</label>
-  <input type="text" id="surname" name="surname" value="">
-  <br>
-  <label for="group">Group:</label>
-  <select id="group" name="group.id">
-    <option value="">Select a group</option>
-    <c:forEach items="${groupList}" var="group">
-      <option value="${group.id}">${group.name}</option>
-    </c:forEach>
-  </select>
-  <br>
-  <label for="parent">Parent:</label>
-  <select id="parent" name="parent.id">
-    <option value="">Select a parent</option>
-    <c:forEach items="${parentList}" var="parent">
-      <option value="${parent.id}">${parent.name} ${parent.surname}</option>
-    </c:forEach>
-  </select>
-  <br>
-  <input type="submit" value="Save">
-</form>
+<h3>Welcome, Enter The Child details</h3>
+
+<form:form method="POST"
+           action="/child/add"   modelAttribute ="child">
+  <table>
+    <tr>
+      <td><form:label path="name">Name</form:label></td>
+      <td><form:input path="name" id="name" type="text"/></td>
+    </tr>
+ 
+    <tr>
+      <td><form:label path="surname">Surname</form:label></td>
+      <td><form:input path="surname" id="surname" type="text"/></td>
+    </tr>
+    
+    <tr>
+      <td><form:label path="group">Group</form:label></td>
+      <td><form:select path="group" id="group" name="group.id">
+        <form:option value="">Select a group</form:option>
+        <c:forEach items="${groups}" var="group">
+          <form:option value="${group.id}">${group.name}</form:option>
+        </c:forEach>
+      </form:select></td>
+    </tr>
+    <tr>
+      <td><form:label path="parent">Parent</form:label></td>
+      <td><form:select path="parent"  id="group" name="parent.id">
+        <form:option value="">Select a parent</form:option>
+        <c:forEach items="${parents}" var="parent">
+          <form:option value="${parent.id}">${parent.name}</form:option>
+        </c:forEach>
+      </form:select></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Save"/></td>
+    </tr>
+  </table>
+</form:form>
 </body>
 </html>

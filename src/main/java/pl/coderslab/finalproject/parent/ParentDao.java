@@ -1,39 +1,41 @@
 package pl.coderslab.finalproject.parent;
 
-import org.springframework.stereotype.Repository;
-import pl.coderslab.finalproject.menu.Menu;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
-import java.awt.print.Book;
 import java.util.List;
 
-@Repository
-@Transactional
+@Service
 public class ParentDao {
     @PersistenceContext
     EntityManager entityManager;
-    public void saveParent(Parent parent) {
-        entityManager.persist(parent);
-    }
+  private ParentRepository parentRepository;
+  @Autowired
 
+    public ParentDao(ParentRepository parentRepository) {
+        this.parentRepository = parentRepository;
+    }
+    public Parent saveParent (Parent newParent){
+
+        return parentRepository.save(newParent);
+    }
     public Parent findById(long id) {
+
         return entityManager.find(Parent.class, id);
     }
-
-    public void update(Parent parent) {
-        entityManager.merge(parent);
+    public void  deleteParent (Parent parent){
+        parentRepository.deleteById(parent.getId());
     }
 
-    public void delete(Parent parent) {
-        entityManager.remove(entityManager.contains(parent) ?
-                parent : entityManager.merge(parent));
-    }
     public List<Parent> findAll() {
-        Query select = entityManager
-                .createQuery("SELECT p from Parent p");
-        return select.getResultList();
+        return parentRepository.findAll();
+    }
+    public  void delete(Long id){
+
+        parentRepository.deleteById(id);
+    }
+    public  void update (Parent newParent){
+        parentRepository.save(newParent);
     }
 }

@@ -1,39 +1,42 @@
 package pl.coderslab.finalproject.menu;
 
-import org.springframework.stereotype.Repository;
-import pl.coderslab.finalproject.child.Child;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
-import java.awt.print.Book;
 import java.util.List;
 
-@Repository
-@Transactional
+@Service
 public class MenuDao {
     @PersistenceContext
     EntityManager entityManager;
-    public void saveMenu(Menu menu) {
-        entityManager.persist(menu);
-    }
+    private MenuRepository menuRepository;
 
+    @Autowired
+
+    public MenuDao(MenuRepository menuRepository) {
+        this.menuRepository = menuRepository;
+    }
+    public Menu saveMenu (Menu newMenu){
+
+        return menuRepository.save(newMenu);
+    }
     public Menu findById(long id) {
+
         return entityManager.find(Menu.class, id);
     }
-
-    public void update(Menu menu) {
-        entityManager.merge(menu);
+    public void  deleteMenu (Menu menu){
+        menuRepository.deleteById(menu.getId());
     }
 
-    public void delete(Menu menu) {
-        entityManager.remove(entityManager.contains(menu) ?
-                menu : entityManager.merge(menu));
-    }
     public List<Menu> findAll() {
-        Query select = entityManager
-                .createQuery("SELECT m from Menu m");
-        return select.getResultList();
+        return menuRepository.findAll();
+    }
+    public  void delete(Long id){
+
+        menuRepository.deleteById(id);
+    }
+    public  void update (Menu newMenu){
+        menuRepository.save(newMenu);
     }
 }
