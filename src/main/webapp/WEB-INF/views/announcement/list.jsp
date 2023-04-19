@@ -14,8 +14,7 @@
     <tr>
       <td>${announcement.id}</td>
       <td>${announcement.description}</td>
-      <td><button>Edit</button></td>
-      <td>
+      <td> <a href="/announcement/update/${announcement.id}">Edit</a>
       <form action="delete/${announcement.id}" method="post">
         <input type="submit" value="Delete">
       </form>

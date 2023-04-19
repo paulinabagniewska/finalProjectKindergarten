@@ -19,8 +19,8 @@
       <td><form:input path="breakfast" id="breakfast" type="text"/></td>
     </tr>
     <tr>
-      <td><form:label path="secondbreakfast">Second Breakfast</form:label></td>
-      <td><form:input path="secondBreakfast" id="secondbreakfast" type="text"/></td>
+      <td><form:label path="secondBreakfast">Second Breakfast</form:label></td>
+      <td><form:input path="secondBreakfast" id="secondBreakfast" type="text"/></td>
     </tr>
     <tr>
       <td><form:label path="lunch">Lunch</form:label></td>

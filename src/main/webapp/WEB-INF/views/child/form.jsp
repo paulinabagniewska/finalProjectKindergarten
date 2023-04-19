@@ -16,7 +16,6 @@
       <td><form:label path="name">Name</form:label></td>
       <td><form:input path="name" id="name" type="text"/></td>
     </tr>
- 
     <tr>
       <td><form:label path="surname">Surname</form:label></td>
       <td><form:input path="surname" id="surname" type="text"/></td>

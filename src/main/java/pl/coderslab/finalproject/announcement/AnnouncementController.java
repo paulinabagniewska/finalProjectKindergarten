@@ -3,6 +3,7 @@ package pl.coderslab.finalproject.announcement;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
@@ -34,24 +35,27 @@ public class AnnouncementController {
         announcementDao.deleteAnnouncement(announcement);
         return "announcement/list";
     }
+
     @GetMapping("/list")
-    public String getList( Model model){
-       List <Announcement> announcements = announcementDao.findAll();
+    public String getList(Model model) {
+        List<Announcement> announcements = announcementDao.findAll();
         model.addAttribute("announcements", announcements);
-        return  "announcement/list";
+        return "announcement/list";
     }
+
     @PostMapping("delete/{id}")
-    public  String deleteAnnouncement(@PathVariable Long id, Model model){
+    public String deleteAnnouncement(@PathVariable Long id, Model model) {
         announcementDao.delete(id);
         List<Announcement> announcements = announcementDao.findAll();
         model.addAttribute("announcements", announcements);
         return "announcement/list";
     }
-    @PostMapping ("/update")
-    public String updateAnnouncement( @RequestBody Announcement announcement, Model model){
-        announcementDao.saveAnnouncement(announcement);
-        List <Announcement> announcements = announcementDao.findAll();
-        model.addAttribute("announcements", announcements);
-        return "announcement/list";
+
+    @GetMapping("/update/{id}")
+    public String updateAnnouncement(@PathVariable Long id, Model model) {
+         Announcement announcement = announcementDao.findById(id);
+         model.addAttribute("announcement", announcement);
+        return "announcement/editForm";
     }
+
 }
