@@ -34,6 +34,11 @@ public class ChildDao {
         childRepository.deleteById(child.getId());
     }
 
+    public  void delete(Long id){
+
+        childRepository.deleteById(id);
+    }
+
     public List<Child> findAll() {
 
         return childRepository.findAll();

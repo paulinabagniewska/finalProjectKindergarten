@@ -27,8 +27,8 @@
             <td><form:label path="child">Child</form:label></td>
             <td><form:select path="id" name="child.id">
                 <form:option value="">Select a child</form:option>
-                <c:forEach items="${childList}" var="child">
-                    <form:option value="${child.id}">${child.name}</form:option>
+                <c:forEach items="${children}" var="child">
+                    <form:option value="${child.id}">${child.name}${child.surname}</form:option>
                 </c:forEach>
             </form:select></td>
         </tr>

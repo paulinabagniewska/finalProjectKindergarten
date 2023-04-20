@@ -2,11 +2,12 @@ package pl.coderslab.finalproject.child;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import pl.coderslab.finalproject.announcement.Announcement;
 import pl.coderslab.finalproject.group.GroupDao;
 import pl.coderslab.finalproject.parent.ParentDao;
+
+import java.util.List;
 
 
 @Controller
@@ -35,6 +36,40 @@ public class ChildController {
     public String saveChild(Child child) {
         childDao.saveChild(child);
         return "child/view";
+    }
+    @PostMapping("/delete")
+    public String deleteChild(Child child) {
+        childDao.deleteChild(child);
+        return "child/list";
+    }
+
+    @GetMapping("/list")
+    public String getList(Model model) {
+        List<Child> children = childDao.findAll();
+        model.addAttribute("child", children);
+        return "child/list";
+    }
+
+    @PostMapping("delete/{id}")
+    public String deleteChild(@PathVariable Long id, Model model) {
+        childDao.delete(id);
+        List<Child> children = childDao.findAll();
+        model.addAttribute("child", children);
+        return "child/list";
+    }
+
+    @GetMapping("/update/{id}")
+    public String updateChild(@PathVariable Long id, Model model) {
+        Child child = childDao.findById(id);
+        model.addAttribute("child", child);
+        return "child/editForm";
+    }
+    @PostMapping ("/update")
+    public String updatedChild(@ModelAttribute Child child, Model model){
+        childDao.saveChild(child);
+        List <Child> children = childDao.findAll();
+        model.addAttribute("childs", children);
+        return "child/list";
     }
 }
 

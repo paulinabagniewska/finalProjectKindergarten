@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edit Form</title>
+    <title>Edit Announcement Form</title>
 </head>
 <body>
 <form:form method="POST"

@@ -22,6 +22,7 @@ public class AbsenceController {
     public String addAbsence(Model model) {
         Absence absence = new Absence();
         model.addAttribute("absence", absence);
+        model.addAttribute("child", childDao.findAll());
         return "absence/form";
     }
 
