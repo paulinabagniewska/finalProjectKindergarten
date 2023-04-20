@@ -35,7 +35,7 @@
       <td><form:select path="parent"  id="group" name="parent.id">
         <form:option value="">Select a parent</form:option>
         <c:forEach items="${parents}" var="parent">
-          <form:option value="${parent.id}">${parent.name}</form:option>
+          <form:option value="${parent.id}">${parent.name} ${parent.surname}</form:option>
         </c:forEach>
       </form:select></td>
     </tr>

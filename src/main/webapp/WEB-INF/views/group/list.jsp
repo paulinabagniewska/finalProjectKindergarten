@@ -14,8 +14,7 @@
         <tr>
             <td>${group.id}</td>
             <td>${group.name}</td>
-            <td><button>Edit</button></td>
-            <td>
+            <td> <a href="/group/update/${group.id}">Edit</a>
                 <form action="delete/${group.id}" method="post">
                     <input type="submit" value="Delete">
                 </form>

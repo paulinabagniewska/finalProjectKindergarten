@@ -27,16 +27,18 @@ public class GroupDao {
         return entityManager.find(Group.class, id);
     }
     public void  deleteGroup (Group group){
-        groupRepository.deleteById(group.getId());
-    }
 
-    public List<Group> findAll() {
-        return groupRepository.findAll();
+    groupRepository.deleteById(group.getId());
     }
     public  void delete(Long id){
 
         groupRepository.deleteById(id);
     }
+
+    public List<Group> findAll() {
+        return groupRepository.findAll();
+    }
+
     public  void update (Group newGroup){
         groupRepository.save(newGroup);
     }

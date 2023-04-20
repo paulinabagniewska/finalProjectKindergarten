@@ -3,10 +3,6 @@ package pl.coderslab.finalproject.group;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.finalproject.announcement.Announcement;
-import pl.coderslab.finalproject.child.Child;
-
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -50,7 +46,14 @@ public class GroupController {
         groupDao.saveGroup(group);
         List <Group> groups = groupDao.findAll();
         model.addAttribute("groups", groups);
-        return "group/list";
+        return "group/editForm";
+    }
+    @PostMapping ("/update")
+    public String updatedGroup( @ModelAttribute Group group, Model model){
+        groupDao.saveGroup(group);
+        List <Group> groups = groupDao.findAll();
+        model.addAttribute("groups", groups);
+        return "announcement/list";
     }
 }
 

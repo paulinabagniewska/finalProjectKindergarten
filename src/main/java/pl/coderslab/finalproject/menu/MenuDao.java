@@ -28,14 +28,15 @@ public class MenuDao {
     public void  deleteMenu (Menu menu){
         menuRepository.deleteById(menu.getId());
     }
-
-    public List<Menu> findAll() {
-        return menuRepository.findAll();
-    }
     public  void delete(Long id){
 
         menuRepository.deleteById(id);
     }
+
+    public List<Menu> findAll() {
+        return menuRepository.findAll();
+    }
+
     public  void update (Menu newMenu){
         menuRepository.save(newMenu);
     }

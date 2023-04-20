@@ -27,14 +27,15 @@ public class ParentDao {
     public void  deleteParent (Parent parent){
         parentRepository.deleteById(parent.getId());
     }
-
-    public List<Parent> findAll() {
-        return parentRepository.findAll();
-    }
     public  void delete(Long id){
 
         parentRepository.deleteById(id);
     }
+
+    public List<Parent> findAll() {
+        return parentRepository.findAll();
+    }
+
     public  void update (Parent newParent){
         parentRepository.save(newParent);
     }

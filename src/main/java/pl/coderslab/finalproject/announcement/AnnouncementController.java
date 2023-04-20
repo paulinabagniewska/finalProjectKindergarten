@@ -3,9 +3,7 @@ package pl.coderslab.finalproject.announcement;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 
 @Controller
 @RequestMapping("/announcement")
@@ -57,5 +55,11 @@ public class AnnouncementController {
          model.addAttribute("announcement", announcement);
         return "announcement/editForm";
     }
-
+    @PostMapping ("/update")
+    public String updatedAnnouncement( @ModelAttribute Announcement announcement, Model model){
+        announcementDao.saveAnnouncement(announcement);
+        List <Announcement> announcements = announcementDao.findAll();
+        model.addAttribute("announcements", announcements);
+        return "announcement/list";
+    }
 }

@@ -30,15 +30,15 @@ public class AnnouncementDao {
     public void  deleteAnnouncement (Announcement announcement){
         announcementRepository.deleteById(announcement.getId());
     }
+    public  void delete(Long id){
+       announcementRepository.deleteById(id);
+    }
 
     public List<Announcement> findAll() {
         return announcementRepository.findAll();
     }
-    public  void delete(Long id){
-
-        announcementRepository.deleteById(id);
-    }
     public  void update (Announcement newAnnouncement){
+
         announcementRepository.save(newAnnouncement);
     }
 }

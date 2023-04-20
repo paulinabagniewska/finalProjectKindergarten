@@ -1,39 +1,47 @@
 package pl.coderslab.finalproject.absence;
 
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
-import java.awt.print.Book;
 import java.util.List;
+
 
 @Service
 public class AbsenceDao {
     @PersistenceContext
     EntityManager entityManager;
-    public void saveAbsence(Absence absence) {
-        entityManager.persist(absence);
+
+    private final AbsenceRepository absenceRepository;
+
+    @Autowired
+
+    public AbsenceDao(AbsenceRepository absenceRepository) {
+        this.absenceRepository = absenceRepository;
+    }
+    public Absence saveAbsence (Absence newAbsence){
+        return absenceRepository.save(newAbsence);
     }
 
     public Absence findById(long id) {
+
         return entityManager.find(Absence.class, id);
     }
+    public void  deleteAbsence (Absence absence){
 
-    public void update(Absence absence) {
-
-        entityManager.merge(absence);
+        absenceRepository.deleteAll();
     }
+ /*   public  void delete(Long id){
+        absenceRepository.deleteById (LocalDate.EPOCH);
+    }*/
 
-    public void delete(Absence absence) {
-        entityManager.remove(entityManager.contains(absence) ?
-                absence : entityManager.merge(absence));
-    }
     public List<Absence> findAll() {
-        Query select = entityManager
-                .createQuery("SELECT a from Absence a");
-        return select.getResultList();
+        return absenceRepository.findAll();
+    }
+
+    public  void update (Absence newAbsence){
+
+        absenceRepository.save(newAbsence);
     }
 }
