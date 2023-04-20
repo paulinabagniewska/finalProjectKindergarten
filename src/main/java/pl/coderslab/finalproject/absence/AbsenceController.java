@@ -22,14 +22,14 @@ public class AbsenceController {
     public String addAbsence(Model model) {
         Absence absence = new Absence();
         model.addAttribute("absence", absence);
-        model.addAttribute("child", childDao.findAll());
+        model.addAttribute("children", childDao.findAll());
         return "absence/form";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String saveAbsence(Absence absence) {
         absenceDao.saveAbsence(absence);
-        return "absence/view";
+        return "redirect:/absence/list";
     }
 
     @PostMapping("/delete")

@@ -21,10 +21,10 @@ public class MenuController {
         model.addAttribute("menu", menu);
         return "menu/form";
     }
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String saveMenu (Menu menu) {
         menuDao.saveMenu(menu);
-        return "menu/view";
+        return "redirect:/menu/list";
     }
     @PostMapping("/delete")
     public String deleteMenu(Menu menu) {

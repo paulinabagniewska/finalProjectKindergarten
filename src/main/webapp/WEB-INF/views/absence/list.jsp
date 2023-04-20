@@ -26,6 +26,11 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <td>
+        <td> <a href="/absence/add/${absence.id}">Add New Absence</a></td>
+        </td>
+    </tr>
 </table>
 </body>
 </html>

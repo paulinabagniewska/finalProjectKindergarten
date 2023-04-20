@@ -3,7 +3,7 @@ package pl.coderslab.finalproject.parent;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.finalproject.group.Group;
+
 
 import java.util.List;
 
@@ -21,10 +21,10 @@ public class ParentController {
         model.addAttribute("parent", parent);
         return "parent/form";
     }
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String saveParent (Parent parent) {
         parentDao.saveParent(parent);
-        return "parent/view";
+        return "redirect:/parent/list";
     }
     @PostMapping("/delete")
     public String deleteParent(Parent parent) {

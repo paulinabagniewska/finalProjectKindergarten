@@ -29,6 +29,11 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <td>
+        <td> <a href="/menu/add/${menu.id}">Add New Menu</a></td>
+        </td>
+    </tr>
 </table>
 </body>
 </html>

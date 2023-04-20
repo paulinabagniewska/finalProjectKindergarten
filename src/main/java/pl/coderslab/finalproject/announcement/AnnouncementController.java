@@ -22,11 +22,16 @@ public class AnnouncementController {
         return "announcement/form";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String saveAnnouncement(Announcement announcement) {
         announcementDao.saveAnnouncement(announcement);
-        return "announcement/view";
+        return "redirect:/announcement/list";
     }
+/*    @GetMapping("/list")
+    public String savedAnnouncementList(Announcement announcement){
+        announcementDao.saveAnnouncement(announcement);
+        return "announcement/form";
+    }*/
 
     @PostMapping("/delete")
     public String deleteAnnouncement(Announcement announcement) {

@@ -21,6 +21,11 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <td>
+        <td> <a href="/group/add/${group.id}">Add New Group</a></td>
+        </td>
+    </tr>
 </table>
 </body>
 </html>

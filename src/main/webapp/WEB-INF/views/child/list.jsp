@@ -19,8 +19,8 @@
             <td>${child.id}</td>
             <td>${child.name}</td>
             <td>${child.surname}</td>
-            <td>${child.group}</td>
-            <td>${child.parent}</td>
+            <td>${groups.id}</td>
+            <td>${parents.id}</td>
             <td> <a href="/child/update/${child.id}">Edit</a>
                 <form action="delete/${child.id}" method="post">
                     <input type="submit" value="Delete">
@@ -28,6 +28,11 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <td>
+        <td> <a href="/child/add/${child.id}">Add New Child</a></td>
+        </td>
+    </tr>
 </table>
 </body>
 </html>

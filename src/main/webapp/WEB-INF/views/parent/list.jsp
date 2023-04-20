@@ -28,6 +28,11 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <td>
+        <td> <a href="/parent/add/${parent.id}">Add New Parent</a></td>
+        </td>
+    </tr>
 </table>
 </body>
 </html>

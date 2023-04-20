@@ -18,10 +18,10 @@ public class GroupController {
         model.addAttribute("group", group);
         return "group/form";
     }
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String saveGroup (Group group) {
         groupDao.saveGroup(group);
-        return "group/view";
+        return "redirect:/group/list";
     }
     @PostMapping("/delete")
     public String deleteGroup(Group group) {
@@ -34,14 +34,14 @@ public class GroupController {
         model.addAttribute("groups", groups);
         return  "group/list";
     }
-    @PostMapping("delete/{id}")
+    @GetMapping("delete/{id}")
     public  String deleteGroup(@PathVariable Long id, Model model){
         groupDao.delete(id);
         List<Group> groups = groupDao.findAll();
         model.addAttribute("groups", groups);
         return "group/list";
     }
-    @PostMapping ("/update")
+    @GetMapping ("/update")
     public String updateGroup( @RequestBody Group group, Model model){
         groupDao.saveGroup(group);
         List <Group> groups = groupDao.findAll();

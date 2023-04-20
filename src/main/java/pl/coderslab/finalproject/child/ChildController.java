@@ -32,10 +32,10 @@ public class ChildController {
         return "child/form";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String saveChild(Child child) {
         childDao.saveChild(child);
-        return "child/view";
+        return "redirect:/child/list";
     }
     @PostMapping("/delete")
     public String deleteChild(Child child) {
@@ -46,7 +46,8 @@ public class ChildController {
     @GetMapping("/list")
     public String getList(Model model) {
         List<Child> children = childDao.findAll();
-        model.addAttribute("child", children);
+        model.addAttribute("children", children);
+
         return "child/list";
     }
 
@@ -54,7 +55,7 @@ public class ChildController {
     public String deleteChild(@PathVariable Long id, Model model) {
         childDao.delete(id);
         List<Child> children = childDao.findAll();
-        model.addAttribute("child", children);
+        model.addAttribute("children", children);
         return "child/list";
     }
 
@@ -62,13 +63,15 @@ public class ChildController {
     public String updateChild(@PathVariable Long id, Model model) {
         Child child = childDao.findById(id);
         model.addAttribute("child", child);
+        model.addAttribute("groups", groupDao.findAll());
+        model.addAttribute("parents", parentDao.findAll());
         return "child/editForm";
     }
     @PostMapping ("/update")
     public String updatedChild(@ModelAttribute Child child, Model model){
         childDao.saveChild(child);
         List <Child> children = childDao.findAll();
-        model.addAttribute("childs", children);
+        model.addAttribute("children", children);
         return "child/list";
     }
 }
