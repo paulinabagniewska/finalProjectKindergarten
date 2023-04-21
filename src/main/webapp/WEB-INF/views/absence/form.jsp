@@ -8,8 +8,7 @@
 </head>
 <body>
 <h3>Welcome, Enter the Absence</h3>
-<form:form method="POST"
-           action="/absence/add" modelAttribute="absence">
+<form:form method="POST" action="/absence/add" modelAttribute="absence" >
     <table>
         <tr>
             <td><form:label path="startsOfAbsence">Starts of Absence</form:label></td>

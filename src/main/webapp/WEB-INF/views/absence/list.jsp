@@ -17,10 +17,10 @@
         <tr>
             <td>${absence.id}</td>
             <td>${absence.startsOfAbsence}</td>
-            <td>${absence.endssOfAbsence}</td>
+            <td>${absence.endsOfAbsence}</td>
             <td>${absence.causeOfAbsence}</td>
             <td> <a href="/absence/update/${absence.id}">Edit</a>
-                <form action="delete/${absence.id}" method="post">
+                <form action="/absence/delete/${absence.id}" method="post">
                     <input type="submit" value="Delete">
                 </form>
             </td>

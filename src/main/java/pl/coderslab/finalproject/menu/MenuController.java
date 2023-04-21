@@ -3,6 +3,8 @@ package pl.coderslab.finalproject.menu;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
 import java.util.List;
 
 @Controller
@@ -21,8 +23,10 @@ public class MenuController {
         model.addAttribute("menu", menu);
         return "menu/form";
     }
+
+
     @PostMapping("/add")
-    public String saveMenu (Menu menu) {
+    public String saveMenu (@ModelAttribute("menu")Menu menu) {
         menuDao.saveMenu(menu);
         return "redirect:/menu/list";
     }

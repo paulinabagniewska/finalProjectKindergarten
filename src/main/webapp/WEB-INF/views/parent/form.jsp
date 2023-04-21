@@ -8,7 +8,7 @@
 <h3>Welcome, Enter The Parent Details</h3>
 
 <form:form method="POST"
-           action="/parent/save"   modelAttribute ="parent">
+           action="/parent/add"   modelAttribute ="parent">
     <table>
         <tr>
             <td><form:label path="name">Name</form:label></td>

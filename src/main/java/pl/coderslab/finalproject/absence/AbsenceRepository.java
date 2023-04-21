@@ -11,4 +11,6 @@ public interface AbsenceRepository extends JpaRepository <Absence, LocalDate> {
     List<Absence> findAllByStartsOfAbsenceAfter(LocalDate date);
 
     List<Absence> findAllByStartsOfAbsence(LocalDate date);
+    void deleteAbsenceById (Long id);
+
 }

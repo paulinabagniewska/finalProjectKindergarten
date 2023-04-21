@@ -1,5 +1,6 @@
 package pl.coderslab.finalproject.child;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ public class ChildController {
     private final ChildDao childDao;
     private final ParentDao parentDao;
     private final GroupDao groupDao;
+
 
     public ChildController(ChildDao childDao, ParentDao parentDao, GroupDao groupDao) {
         this.childDao = childDao;
@@ -43,13 +45,14 @@ public class ChildController {
         return "child/list";
     }
 
-    @GetMapping("/list")
+
+   @GetMapping("/list")
     public String getList(Model model) {
         List<Child> children = childDao.findAll();
         model.addAttribute("children", children);
-
         return "child/list";
     }
+
 
     @PostMapping("delete/{id}")
     public String deleteChild(@PathVariable Long id, Model model) {
@@ -59,7 +62,7 @@ public class ChildController {
         return "child/list";
     }
 
-    @GetMapping("/update/{id}")
+   @GetMapping("/update/{id}")
     public String updateChild(@PathVariable Long id, Model model) {
         Child child = childDao.findById(id);
         model.addAttribute("child", child);

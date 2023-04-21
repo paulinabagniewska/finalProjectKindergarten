@@ -8,7 +8,7 @@
 <h3>Welcome, Enter The Menu Details</h3>
 
 <form:form method="POST"
-           action="/menu/save"   modelAttribute ="menu">
+           action="/menu/add"   modelAttribute ="menu">
   <table>
     <tr>
       <td><form:label path="date">Date</form:label></td>
