@@ -20,11 +20,8 @@
             <td>${parent.surname}</td>
             <td>${parent.email}</td>
             <td>${parent.phone}</td>
-            <td><button>Edit</button></td>
-            <td>
-                <form action="delete/${parent.id}" method="post">
-                    <input type="submit" value="Delete">
-                </form>
+            <td> <a href="/parent/update/${parent.id}">Edit</a>
+            <td> <a href="/parent/delete/${parent.id}" >Delete</a>
             </td>
         </tr>
     </c:forEach>

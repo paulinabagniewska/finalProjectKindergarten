@@ -6,7 +6,7 @@
 </head>
 <body>
 <form:form method="POST"
-action="/parent/save"   modelAttribute ="parent">
+action="/parent/update"   modelAttribute ="parent">
 <table>
     <tr>
         <td><form:label path="name">Name</form:label></td>

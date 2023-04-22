@@ -3,6 +3,7 @@ package pl.coderslab.finalproject.announcement;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Controller
@@ -27,17 +28,6 @@ public class AnnouncementController {
         announcementDao.saveAnnouncement(announcement);
         return "redirect:/announcement/list";
     }
-/*    @GetMapping("/list")
-    public String savedAnnouncementList(Announcement announcement){
-        announcementDao.saveAnnouncement(announcement);
-        return "announcement/form";
-    }*/
-
-    @PostMapping("/delete")
-    public String deleteAnnouncement(Announcement announcement) {
-        announcementDao.deleteAnnouncement(announcement);
-        return "announcement/list";
-    }
 
     @GetMapping("/list")
     public String getList(Model model) {
@@ -46,25 +36,35 @@ public class AnnouncementController {
         return "announcement/list";
     }
 
-    @PostMapping("delete/{id}")
-    public String deleteAnnouncement(@PathVariable Long id, Model model) {
+    @RequestMapping("delete/{id}")
+    public String deleteAnnouncement(@PathVariable Long id) {
+        Announcement announcement = announcementDao.findById(id);
         announcementDao.delete(id);
-        List<Announcement> announcements = announcementDao.findAll();
-        model.addAttribute("announcements", announcements);
-        return "announcement/list";
+        return "redirect:/announcement/list";
     }
 
     @GetMapping("/update/{id}")
     public String updateAnnouncement(@PathVariable Long id, Model model) {
-         Announcement announcement = announcementDao.findById(id);
-         model.addAttribute("announcement", announcement);
+        Announcement announcement = announcementDao.findById(id);
+        model.addAttribute("announcement", announcement);
         return "announcement/editForm";
     }
-    @PostMapping ("/update")
-    public String updatedAnnouncement( @ModelAttribute Announcement announcement, Model model){
+
+   @PostMapping("/update")
+    public String updatedAnnouncement(@ModelAttribute Announcement announcement, Model model) {
         announcementDao.saveAnnouncement(announcement);
         List <Announcement> announcements = announcementDao.findAll();
         model.addAttribute("announcements", announcements);
+
         return "announcement/list";
     }
+/*    @RequestMapping ("/update/{id}/{description}")
+    @ResponseBody
+    public String updatedAnnouncement (@PathVariable Long id, @PathVariable String description){
+        Announcement announcement = announcementDao.findById(id);
+        announcement.setId(id);
+        announcement.setDescription(description);
+        announcementDao.updateAnnouncement(announcement);
+        return "redirect:/announcement/list";
+    }*/
 }

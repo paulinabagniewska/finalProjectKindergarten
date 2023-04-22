@@ -22,10 +22,8 @@
             <td>${menu.secondBreakfast}</td>
             <td>${menu.lunch}</td>
             <td>${menu.dessert}</td>
-            <td> <a href="/menu/update/${menu.id}">Edit</a>
-                <form action="delete/${menu.id}" method="post">
-                    <input type="submit" value="Delete">
-                </form>
+            <td><a href="/menu/add?id=${menu.id}">Edit</a>
+            <td> <a href="/menu/delete/${menu.id}" >Delete</a>
             </td>
         </tr>
     </c:forEach>

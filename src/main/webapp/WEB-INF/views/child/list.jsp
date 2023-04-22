@@ -22,9 +22,7 @@
             <td>${child.group.name}</td>
             <td>${child.parent.name}         ${child.parent.surname}</td>
             <td> <a href="/child/add/${child.id}">Edit</a>
-                <form action="delete/${child.id}" method="post">
-                    <input type="submit" value="Delete">
-                </form>
+            <td> <a href="/child/delete/${child.id}" >Delete</a>
             </td>
         </tr>
     </c:forEach>

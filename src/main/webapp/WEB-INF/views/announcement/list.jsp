@@ -15,9 +15,7 @@
       <td>${announcement.id}</td>
       <td>${announcement.description}</td>
       <td> <a href="/announcement/update/${announcement.id}">Edit</a>
-        <form action="delete/${announcement.id}" method="post">
-          <input type="submit" value="Delete">
-        </form>
+        <td> <a href="/announcement/delete/${announcement.id}" >Delete</a>
       </td>
     </tr>
   </c:forEach>

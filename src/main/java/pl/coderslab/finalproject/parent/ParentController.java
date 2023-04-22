@@ -3,7 +3,7 @@ package pl.coderslab.finalproject.parent;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import pl.coderslab.finalproject.announcement.Announcement;
 
 import java.util.List;
 
@@ -34,21 +34,27 @@ public class ParentController {
     @GetMapping("/list")
     public String getList( Model model){
         List<Parent> parents = parentDao.findAll();
-        model.addAttribute("parents ", parents );
+        model.addAttribute("parents", parents );
         return  "parent/list";
     }
     @PostMapping("delete/{id}")
     public  String deleteParent(@PathVariable Long id, Model model){
         parentDao.delete(id);
         List<Parent> parents  = parentDao.findAll();
-        model.addAttribute("parents ", parents );
+        model.addAttribute("parents", parents );
         return "parent/list";
     }
+    @GetMapping("/update/{id}")
+    public String updateParent(@PathVariable Long id, Model model) {
+        Parent parent = parentDao.findById(id);
+        model.addAttribute("parent", parent);
+        return "parent/editForm";
+    }
     @PostMapping ("/update")
-    public String updateParent(@RequestBody Parent parent, Model model){
+    public String updatedParent( @ModelAttribute Parent parent, Model model){
         parentDao.saveParent(parent);
-        List <Parent> parents  = parentDao.findAll();
-        model.addAttribute("parents", parents );
+        List <Parent> parents = parentDao.findAll();
+        model.addAttribute("parents", parents);
         return "parent/list";
     }
 }

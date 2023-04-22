@@ -37,7 +37,7 @@ public class AnnouncementDao {
     public List<Announcement> findAll() {
         return announcementRepository.findAll();
     }
-    public  void update (Announcement newAnnouncement){
+    public  void updateAnnouncement (Announcement newAnnouncement){
 
         announcementRepository.save(newAnnouncement);
     }

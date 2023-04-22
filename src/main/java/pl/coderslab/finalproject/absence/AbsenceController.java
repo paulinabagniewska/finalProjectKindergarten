@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.finalproject.child.ChildDao;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,7 +28,7 @@ public class AbsenceController {
     }
 
     @PostMapping("/add")
-    public String saveAbsence(@ModelAttribute("absence") Absence absence) {
+    public String saveAbsence( Absence absence) {
         absenceDao.saveAbsence(absence);
         return "redirect:/absence/list";
     }
@@ -37,11 +39,11 @@ public class AbsenceController {
         return "absence/list";
     }
 
-    @GetMapping("/list")
+   @GetMapping("/list")
     public String getList(Model model) {
         List<Absence> absences = absenceDao.findAll();
         model.addAttribute("absences", absences);
-        return "redirect:/absence/list";
+        return "absence/list";
     }
 
     @PostMapping("delete/{id}")

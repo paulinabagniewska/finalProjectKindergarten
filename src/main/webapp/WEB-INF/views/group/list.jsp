@@ -15,9 +15,7 @@
             <td>${group.id}</td>
             <td>${group.name}</td>
             <td> <a href="/group/update/${group.id}">Edit</a>
-                <form action="delete/${group.id}" method="post">
-                    <input type="submit" value="Delete">
-                </form>
+            <td> <a href="/group/delete/${group.id}" >Delete</a>
             </td>
         </tr>
     </c:forEach>

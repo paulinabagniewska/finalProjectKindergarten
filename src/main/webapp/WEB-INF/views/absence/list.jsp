@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Absence</title>
+    <title>Absence List</title>
 </head>
 <body>
 <table>
@@ -11,6 +11,7 @@
         <th>Starts of Absence</th>
         <th>Ends of Absence</th>
         <th>Cause of Absence</th>
+        <th>Child</th>
 
     </tr>
     <c:forEach items="${absences}" var="absence">
@@ -19,17 +20,15 @@
             <td>${absence.startsOfAbsence}</td>
             <td>${absence.endsOfAbsence}</td>
             <td>${absence.causeOfAbsence}</td>
-            <td> <a href="/absence/update/${absence.id}">Edit</a>
-                <form action="/absence/delete/${absence.id}" method="post">
-                    <input type="submit" value="Delete">
-                </form>
+            <td>${absence.child.name} ${absence.child.surname}</td>
+            <td> <a href="/absence/add/${absence.id}">Edit</a>
+            <td> <a href="/absence/delete/${absence.id}" >Delete</a>
             </td>
         </tr>
     </c:forEach>
     <tr>
         <td>
         <td> <a href="/absence/add/${absence.id}">Add New Absence</a></td>
-        </td>
     </tr>
 </table>
 </body>
