@@ -21,7 +21,8 @@
             <td>${absence.endsOfAbsence}</td>
             <td>${absence.causeOfAbsence}</td>
             <td>${absence.child.name} ${absence.child.surname}</td>
-            <td> <a href="/absence/add/${absence.id}">Edit</a>
+
+            <td> <a href="/absence/update/${absence.id}">Edit</a>
             <td> <a href="/absence/delete/${absence.id}" >Delete</a>
             </td>
         </tr>

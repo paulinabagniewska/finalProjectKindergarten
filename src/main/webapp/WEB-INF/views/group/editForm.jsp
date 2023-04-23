@@ -11,6 +11,7 @@
     <tr>
       <td><form:label path="name">Group Name</form:label></td>
       <td><form:textarea  path="name" id="name" name="name" rows="4" cols="50"/></td>
+      <td><form:hidden path="id" id="id" name="id"/></td>
     </tr>
     <tr>
       <td><input type="submit" value="Update"/></td>

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.finalproject.announcement.Announcement;
 import pl.coderslab.finalproject.group.GroupDao;
+import pl.coderslab.finalproject.parent.Parent;
 import pl.coderslab.finalproject.parent.ParentDao;
 
 import java.util.List;
@@ -53,14 +54,12 @@ public class ChildController {
         return "child/list";
     }
 
-
-    @PostMapping("delete/{id}")
-    public String deleteChild(@PathVariable Long id, Model model) {
-        childDao.delete(id);
-        List<Child> children = childDao.findAll();
-        model.addAttribute("children", children);
-        return "child/list";
-    }
+@RequestMapping("delete/{id}")
+public String deleteChild(@PathVariable Long id) {
+    Child child = childDao.findById(id);
+    childDao.delete(id);
+    return "redirect:/child/list";
+}
 
    @GetMapping("/update/{id}")
     public String updateChild(@PathVariable Long id, Model model) {

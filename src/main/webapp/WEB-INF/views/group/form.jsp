@@ -8,7 +8,7 @@
 <h3>Welcome, Enter The Group name</h3>
 
 <form:form method="POST"
-           action="/group/save"   modelAttribute ="group">
+           action="/group/add"   modelAttribute ="group">
     <table>
     <tr>
     <td><form:label path="name">Group Name</form:label></td>

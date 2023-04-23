@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.finalproject.child.ChildDao;
+import pl.coderslab.finalproject.group.Group;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,35 +33,37 @@ public class AbsenceController {
         return "redirect:/absence/list";
     }
 
-    @PostMapping("/delete")
-    public String deleteAbsence(@ModelAttribute("absence") Absence absence) {
-        absenceDao.deleteAbsence(absence);
-        return "absence/list";
-    }
 
    @GetMapping("/list")
     public String getList(Model model) {
         List<Absence> absences = absenceDao.findAll();
         model.addAttribute("absences", absences);
+        model.addAttribute("children", childDao.findAll());
         return "absence/list";
     }
 
-    @PostMapping("delete/{id}")
-    public String deleteAbsence(@PathVariable Long id,  Model model) {
-        absenceDao.deleteAbsence(new Absence());
+    @GetMapping("delete/{id}")
+    public  String deleteAbsence(@PathVariable Long id, Model model) {
+        absenceDao.delete(id);
         List<Absence> absences = absenceDao.findAll();
         model.addAttribute("absences", absences);
-        return "redirect:/absence/list";
+        return "absence/list";
+    }
+    @PostMapping("/delete")
+    public String deleteAbsence(Absence absence) {
+        absenceDao.deleteAbsence(absence);
+        return "absence/list";
     }
 
     @GetMapping("/update/{id}")
     public String updateAbsence(@PathVariable Long id, Model model) {
         Absence absence = absenceDao.findById(id);
         model.addAttribute("absence", absence);
+        model.addAttribute("children", childDao.findAll());
         return "absence/editForm";
     }
 
-    @PostMapping("/update")
+ @PostMapping("/update")
     public String updatedAbsence(@ModelAttribute Absence absence, Model model) {
         absenceDao.saveAbsence(absence);
         List<Absence> absences = absenceDao.findAll();

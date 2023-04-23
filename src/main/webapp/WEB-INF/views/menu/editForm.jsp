@@ -6,11 +6,12 @@
 </head>
 <body>
 <form:form method="POST"
-           action="/menu/update"   modelAttribute ="menu">
+           action="/menu/update"  modelAttribute="menu">
   <table>
     <tr>
       <td><form:label path="date">Date</form:label></td>
       <td><form:input path="date" id="date" type="date"/></td>
+      <td><form:hidden path="id" id="id" name="id"/></td>
     </tr>
     <tr>
       <td><form:label path="breakfast">Breakfast</form:label></td>

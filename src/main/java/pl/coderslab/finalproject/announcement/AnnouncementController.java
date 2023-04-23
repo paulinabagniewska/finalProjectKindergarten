@@ -3,6 +3,7 @@ package pl.coderslab.finalproject.announcement;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.finalproject.absence.Absence;
 
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class AnnouncementController {
         return "announcement/editForm";
     }
 
-   @PostMapping("/update")
+ @PostMapping("/update")
     public String updatedAnnouncement(@ModelAttribute Announcement announcement, Model model) {
         announcementDao.saveAnnouncement(announcement);
         List <Announcement> announcements = announcementDao.findAll();
@@ -58,13 +59,5 @@ public class AnnouncementController {
 
         return "announcement/list";
     }
-/*    @RequestMapping ("/update/{id}/{description}")
-    @ResponseBody
-    public String updatedAnnouncement (@PathVariable Long id, @PathVariable String description){
-        Announcement announcement = announcementDao.findById(id);
-        announcement.setId(id);
-        announcement.setDescription(description);
-        announcementDao.updateAnnouncement(announcement);
-        return "redirect:/announcement/list";
-    }*/
+
 }

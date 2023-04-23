@@ -24,10 +24,10 @@
         </tr>
         <tr>
             <td><form:label path="child">Child</form:label></td>
-            <td><form:select path="id" name="child.id">
+            <td><form:select path="child" name="child.id">
                 <form:option value="">Select a child</form:option>
                 <c:forEach items="${children}" var="child">
-                    <form:option value="${child.id}">${child.name}${child.surname}</form:option>
+                    <form:option value="${child.id}">${child.name}      ${child.surname}</form:option>
                 </c:forEach>
             </form:select></td>
         </tr>

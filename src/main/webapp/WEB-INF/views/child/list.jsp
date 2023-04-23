@@ -21,7 +21,7 @@
             <td>${child.surname}</td>
             <td>${child.group.name}</td>
             <td>${child.parent.name}         ${child.parent.surname}</td>
-            <td> <a href="/child/add/${child.id}">Edit</a>
+            <td> <a href="/child/update/${child.id}">Edit</a>
             <td> <a href="/child/delete/${child.id}" >Delete</a>
             </td>
         </tr>

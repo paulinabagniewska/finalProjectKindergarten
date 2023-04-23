@@ -21,10 +21,11 @@
       <td><form:label path="causeOfAbsence">
         Description</form:label></td>
       <td><form:textarea  path="causeOfAbsence" id="causeOfAbsence" name="causeOfAbsence" rows="4" cols="50"/></td>
+      <td><form:hidden path="id" id="id" name="id"/></td>
     </tr>
     <tr>
       <td><form:label path="child">Child</form:label></td>
-      <td><form:select path="id" name="child.id">
+      <td><form:select path="child" name="child.id">
         <form:option value="">Select a child</form:option>
         <c:forEach items="${children}" var="child">
           <form:option value="${child.id}">${child.name}${child.surname}</form:option>

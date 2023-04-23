@@ -12,6 +12,7 @@
             <td><form:label path="description">
                 Description</form:label></td>
             <td><form:textarea  path="description" id="description" name="description" rows="4" cols="50"/></td>
+            <td><form:hidden path="id" id="id" name="id"/> </td>
         </tr>
         <tr>
             <td><input type="submit" value="Update"/></td>

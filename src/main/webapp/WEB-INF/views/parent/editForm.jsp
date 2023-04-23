@@ -11,10 +11,12 @@ action="/parent/update"   modelAttribute ="parent">
     <tr>
         <td><form:label path="name">Name</form:label></td>
         <td><form:textarea  path="name" id="name" name="name" rows="4" cols="50"/></td>
+        <td><form:hidden path="id" id="id" name="id"/></td>
     </tr>
     <tr>
         <td><form:label path="surname">Surname</form:label></td>
         <td><form:textarea  path="surname" id="surname" name="surname" rows="4" cols="50"/></td>
+
     </tr>
     <tr>
         <td><form:label path="email">Email</form:label></td>

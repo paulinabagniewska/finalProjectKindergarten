@@ -3,7 +3,6 @@ package pl.coderslab.finalproject.absence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -33,21 +32,18 @@ public class AbsenceDao {
         return entityManager.find(Absence.class, id);
     }
 
-    public void deleteAbsence(Absence absence) {
-
-        absenceRepository.deleteAll();
+    public void  deleteAbsence (Absence absence){
+        absenceRepository.deleteById(absence.getId());
+    }
+    public  void delete(Long id){
+        absenceRepository.deleteById(id);
     }
 
-    public void deleteAbsenceById(Long id) {
-        absenceRepository.deleteAbsenceById(id);
-    }
 
         public List<Absence> findAll () {
             return absenceRepository.findAll();
         }
-
-        public void update (Absence newAbsence){
-
-            absenceRepository.save(newAbsence);
+        public  Absence update(Absence absence){
+        return absenceRepository.save(absence);
         }
     }

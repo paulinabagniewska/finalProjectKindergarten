@@ -7,12 +7,12 @@
 <body>
 <h3>Welcome, Enter The Parent Details</h3>
 
-<form:form method="POST"
-           action="/parent/add"   modelAttribute ="parent">
+<form:form method="POST" action="/parent/add"   modelAttribute ="parent">
     <table>
         <tr>
             <td><form:label path="name">Name</form:label></td>
             <td><form:input path="name" id="name" type="text"/></td>
+
         </tr>
         <tr>
             <td><form:label path="surname">Surname</form:label></td>

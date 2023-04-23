@@ -37,13 +37,12 @@ public class ParentController {
         model.addAttribute("parents", parents );
         return  "parent/list";
     }
-    @PostMapping("delete/{id}")
-    public  String deleteParent(@PathVariable Long id, Model model){
-        parentDao.delete(id);
-        List<Parent> parents  = parentDao.findAll();
-        model.addAttribute("parents", parents );
-        return "parent/list";
-    }
+@RequestMapping("delete/{id}")
+public String deleteParent(@PathVariable Long id) {
+   Parent parent = parentDao.findById(id);
+    parentDao.delete(id);
+    return "redirect:/parent/list";
+}
     @GetMapping("/update/{id}")
     public String updateParent(@PathVariable Long id, Model model) {
         Parent parent = parentDao.findById(id);
