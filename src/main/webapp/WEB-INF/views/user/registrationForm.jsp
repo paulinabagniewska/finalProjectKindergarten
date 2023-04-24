@@ -15,11 +15,15 @@
         </tr>
 
             <td> <form:label path="password" for="password" >Password</form:label></td>
-        <td><form:input path="password" id="password" name="password"/></td>
+        <td><form:input path="password" id="password" name="password" type="password"/></td>
         </tr>
 
             <td><input type="submit" value="Register"/></td>
         </tr>
+        <tr>
+           <td><p>Already have an account? <a href="/user/login">Click here</a></p></td>
+        </tr>
+
     </table>
 </form:form>
 </body>

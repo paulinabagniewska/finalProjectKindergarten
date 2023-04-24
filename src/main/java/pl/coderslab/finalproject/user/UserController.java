@@ -29,12 +29,20 @@ public class UserController {
         return "redirect:/user/list";
     }
 
-
     @GetMapping("/list")
     public String getList(Model model) {
         List<User> userList = userDao.findAll();
         model.addAttribute("userList", userList);
         return "user/list";
+    }
+    @PostMapping("/login")
+    public String loginUser(User user){
+        User userDatabase = userDao.findByLogin(user);
+        if(userDatabase == null){
+            return "incorrectLogin";
+        }else{
+            return "userMenu";
+        }
     }
 
     /*    @RequestMapping("delete/{id}")
