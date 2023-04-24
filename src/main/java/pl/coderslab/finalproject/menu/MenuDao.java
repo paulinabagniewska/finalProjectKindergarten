@@ -27,6 +27,7 @@ public class MenuDao {
         return entityManager.find(Menu.class, id);
     }
     public void  deleteMenu (Menu menu){
+
         menuRepository.deleteById(menu.getId());
     }
     public  void delete(Long id){
