@@ -25,7 +25,7 @@ public class UserController {
 
     @PostMapping("/add")
     public String saveUser(User user) {
-        userDao.saveUser(user);
+        userDao.saveUser(user, Role.USER);
         return "redirect:/user/list";
     }
 
@@ -35,41 +35,23 @@ public class UserController {
         model.addAttribute("userList", userList);
         return "user/list";
     }
+
     @PostMapping("/login")
-    public String loginUser(User user){
+    public String loginUser(User user) {
         User userDatabase = userDao.findByLogin(user);
-        if(userDatabase == null){
-            return "incorrectLogin";
-        }else{
-            return "userMenu";
+        if (userDatabase == null) {
+            return "user/incorrectLogin";
+        }else if (userDatabase.getRole() == Role.USER){
+            return "user/userMenu";
+        } else {
+            return "user/adminMenu";
         }
     }
 
-    /*    @RequestMapping("delete/{id}")
-        public String deleteUser(@PathVariable String login) {
-            User user = userDao.findByLogin(login);
-            userDao.delete(login);
-            return "redirect:/user/list";
-        }*/
-/*    @PostMapping("/delete")
-    public String deleteUser(User user) {
-        userDao.deleteUser(user);
-        return "user/list";
-    }*/
-
-/*    @GetMapping("/update/{id}")
-    public String updateUser(@PathVariable String login, Model model) {
-        User user = userDao.findByLogin(login);
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        User user = new User();
         model.addAttribute("user", user);
-
-        return "user/editForm";
+        return "user/login";
     }
-
-    @PostMapping("/update")
-    public String updatedUser(@ModelAttribute User user, Model model) {
-        userDao.saveUser(user);
-        List<User> userList = userDao.findAll();
-        model.addAttribute("userList", userList);
-        return "user/list";
-    }*/
 }

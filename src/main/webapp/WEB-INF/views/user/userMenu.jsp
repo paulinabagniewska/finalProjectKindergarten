@@ -7,11 +7,12 @@
 <body>
 <table>
     <tr>
-        <td> <a href="menu/list"></a> </td>
+        <td> <a href="/menu/list/${menuList}">Menu </a> </td>
+    <tr>
+        <td> <a href="/absence/add/${absence.id}">Add New Absence</a></td>
+    </tr>
 
-        <td><a href="announcement/list"></a></td>
-
-        <td><a href="absence/add"></a></td>
+        <td><a href="/announcement/list/${announcement.id}"> Announcements</a></td>
     </tr>
 
 </table>

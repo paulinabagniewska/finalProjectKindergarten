@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<p> Incorrect login or password </p>
+<p> Incorrect login or password  try again: </p>
+<td> <a href="/user/login"></a></td>
 </body>
 </html>
