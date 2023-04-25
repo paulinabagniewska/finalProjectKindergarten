@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Absence Edit Form</title>
+    <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
 <form:form method="POST"

@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Menu List</title>
+    <link rel="stylesheet" type="text/css" href="/css/list.css">
 </head>
 <body>
 <table>
@@ -22,15 +23,14 @@
             <td>${menu.secondBreakfast}</td>
             <td>${menu.lunch}</td>
             <td>${menu.dessert}</td>
-            <td><a href="/menu/update/${menu.id}">Edit</a>
-            <td> <a href="/menu/delete/${menu.id}" >Delete</a>
+            <td>
+                    <a href="/menu/update/${menu.id}">Edit</a>
+                    <a href="/menu/delete/${menu.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>
     <tr>
-        <td>
-        <td> <a href="/menu/add/${menu.id}">Add New Menu</a></td>
-        </td>
+        <td><a href="/menu/add/${menu.id}">Add New Menu</a></td>
     </tr>
 </table>
 </body>

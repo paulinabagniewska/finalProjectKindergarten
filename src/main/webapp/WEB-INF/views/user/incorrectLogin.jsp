@@ -6,6 +6,9 @@
 </head>
 <body>
 <p> Incorrect login or password  try again: </p>
-<td> <a href="/user/login"></a></td>
+<tr>
+    <td> <a href="/user/login"></a></td>
+</tr>
+
 </body>
 </html>

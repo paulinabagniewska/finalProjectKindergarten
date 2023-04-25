@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
 <body>
 <form:form method="POST"

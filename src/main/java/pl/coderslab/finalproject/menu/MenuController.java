@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.coderslab.finalproject.absence.Absence;
+import pl.coderslab.finalproject.announcement.Announcement;
 import pl.coderslab.finalproject.child.Child;
 
 import java.time.LocalDate;
@@ -46,6 +47,13 @@ public class MenuController {
         List<Menu> menuList = menuDao.findAll();
         model.addAttribute("menuList", menuList);
         return "menu/list";
+    }
+    @GetMapping("/userList")
+    public String getUserList(Model model) {
+        List<Menu> menuList = menuDao.findAll();
+        model.addAttribute("menuList", menuList);
+
+        return "menu/userList";
     }
     @RequestMapping("delete/{id}")
     public String deleteMenu(@PathVariable Long id) {

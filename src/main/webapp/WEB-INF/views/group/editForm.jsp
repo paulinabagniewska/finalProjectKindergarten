@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
 <form:form method="POST"

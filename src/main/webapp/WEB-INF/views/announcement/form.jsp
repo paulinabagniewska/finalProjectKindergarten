@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Announcement Form</title>
+    <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
 <h3>Welcome, Enter The Announcement Description</h3>

@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Menu</title>
+     <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
 <h3>Welcome, Enter The Menu Details</h3>

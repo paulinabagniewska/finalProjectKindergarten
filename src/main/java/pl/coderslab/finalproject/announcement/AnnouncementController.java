@@ -36,7 +36,13 @@ public class AnnouncementController {
         model.addAttribute("announcements", announcements);
         return "announcement/list";
     }
+    @GetMapping("/userList")
+    public String getUserList(Model model) {
+        List<Announcement> announcements = announcementDao.findAll();
+        model.addAttribute("announcements", announcements);
 
+        return "announcement/userList";
+    }
     @RequestMapping("delete/{id}")
     public String deleteAnnouncement(@PathVariable Long id) {
         Announcement announcement = announcementDao.findById(id);

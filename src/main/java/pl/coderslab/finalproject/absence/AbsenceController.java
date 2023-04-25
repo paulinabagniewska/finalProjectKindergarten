@@ -41,6 +41,13 @@ public class AbsenceController {
         model.addAttribute("children", childDao.findAll());
         return "absence/list";
     }
+    @GetMapping("/userList")
+    public String getUserList(Model model) {
+        List<Absence> absences = absenceDao.findAll();
+        model.addAttribute("absences", absences);
+        model.addAttribute("children", childDao.findAll());
+        return "absence/userList";
+    }
 
     @GetMapping("delete/{id}")
     public  String deleteAbsence(@PathVariable Long id, Model model) {

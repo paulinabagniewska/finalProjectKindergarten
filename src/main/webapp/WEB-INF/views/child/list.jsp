@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Child List</title>
+    <link rel="stylesheet" type="text/css" href="/css/list.css">
 </head>
 <body>
 <table>

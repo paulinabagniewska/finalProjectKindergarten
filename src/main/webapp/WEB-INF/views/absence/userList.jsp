@@ -22,16 +22,9 @@
             <td>${absence.endsOfAbsence}</td>
             <td>${absence.causeOfAbsence}</td>
             <td>${absence.child.name} ${absence.child.surname}</td>
-
-            <td><a href="/absence/update/${absence.id}">Edit</a>
-                <a href="/absence/delete/${absence.id}" >Delete</a>
-            </td>
         </tr>
     </c:forEach>
-    <tr>
-        <td>
-        <td> <a href="/absence/add/${absence.id}">Add New Absence</a></td>
-    </tr>
 </table>
 </body>
 </html>
+

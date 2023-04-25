@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Child form</title>
+    <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
 <h3>Welcome, Enter The Child details</h3>

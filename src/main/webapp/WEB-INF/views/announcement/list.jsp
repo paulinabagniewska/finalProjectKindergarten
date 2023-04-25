@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Announcement List</title>
+    <link rel="stylesheet" type="text/css" href="/css/list.css">
 </head>
 <body>
 <table>
@@ -14,14 +15,15 @@
     <tr>
       <td>${announcement.id}</td>
       <td>${announcement.description}</td>
-      <td> <a href="/announcement/update/${announcement.id}">Edit</a>
-        <td> <a href="/announcement/delete/${announcement.id}" >Delete</a>
+      <td>
+       <a href="/announcement/update/${announcement.id}">Edit</a>
+        <a href="/announcement/delete/${announcement.id}" >Delete</a>
       </td>
     </tr>
   </c:forEach>
   <tr>
     <td>
-    <td> <a href="/announcement/add/${announcement.id}">Add New Announcement</a></td>
+        <td><a href="/announcement/add/${announcement.id}">Add New Announcement</a></td>
     </td>
   </tr>
 </table>
