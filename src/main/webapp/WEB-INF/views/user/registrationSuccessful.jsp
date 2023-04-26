@@ -2,16 +2,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Failed</title>
+    <title>Registration successful</title>
     <link rel="stylesheet" type="text/css" href="/css/registration.css">
 </head>
 <body>
 <table>
     <tr>
-        <td><h3>Incorrect login or password, please  try again! </h3></td>
+    <td><h3>Your registration was successful! Enjoy! </h3></td>
     </tr>
     <tr>
-        <td> <a href="/user/login"><span>Login again</span></a> </td>
+        <td> <a href="/user/login">Click here to login</a></td>
     </tr>
 </table>
 </body>

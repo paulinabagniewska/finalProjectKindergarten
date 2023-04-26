@@ -23,7 +23,10 @@
       <td>${menu.secondBreakfast}</td>
       <td>${menu.lunch}</td>
       <td>${menu.dessert}</td>
-
   </c:forEach>
+
+  <tr>
+    <td> <a href="/user/loggedIn"> Main Menu </a></td>
+  </tr>
 </table>
 </body>

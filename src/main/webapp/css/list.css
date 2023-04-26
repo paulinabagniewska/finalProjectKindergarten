@@ -3,6 +3,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 30px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 
@@ -12,11 +13,13 @@ th {
     font-weight: bold;
     padding: 10px;
     text-align: left;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 
@@ -24,6 +27,7 @@ a {
     color: #4682b4;
     text-decoration: none;
     margin-right: 10px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 a[href^="/menu/add/"] {
@@ -36,6 +40,7 @@ a[href^="/menu/add/"] {
     margin-top: 10px;
     display: inline-block;
     text-decoration: none;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 
@@ -48,4 +53,5 @@ a[href^="/menu/update/"], a[href^="/menu/delete/"] {
     cursor: pointer;
     margin-right: 5px;
     text-decoration: none;
+    font-family: "Comic Sans MS", sans-serif;
 }

@@ -31,6 +31,9 @@
         <td> <a href="/parent/add/${parent.id}">Add New Parent</a></td>
         </td>
     </tr>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

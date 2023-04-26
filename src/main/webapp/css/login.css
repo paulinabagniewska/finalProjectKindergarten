@@ -5,11 +5,13 @@ form {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form label {
     display: block;
     margin-bottom: 20px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form input[type="text"], form input[type="password"] {
@@ -20,6 +22,7 @@ form input[type="text"], form input[type="password"] {
     box-sizing: border-box;
     margin-bottom: 10px;
     font-size: 16px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form input[type="submit"] {
@@ -29,4 +32,5 @@ form input[type="submit"] {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    font-family: "Comic Sans MS", sans-serif;
 }

@@ -25,6 +25,9 @@
         <td> <a href="/group/add/${group.id}">Add New Group</a></td>
         </td>
     </tr>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

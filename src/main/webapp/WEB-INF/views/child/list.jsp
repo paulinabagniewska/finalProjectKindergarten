@@ -32,6 +32,9 @@
         <td> <a href="/child/add/${child.id}">Add New Child</a></td>
         </td>
     </tr>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

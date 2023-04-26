@@ -32,6 +32,9 @@
     <tr>
         <td><a href="/menu/add/${menu.id}">Add New Menu</a></td>
     </tr>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

@@ -1,6 +1,7 @@
 h3 {
     font-size: 20px;
     font-weight: bold;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 table {
@@ -8,22 +9,26 @@ table {
     max-width: 600px;
     margin: 0 auto;
     border-collapse: collapse;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ccc;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form {
     margin-top: 20px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form input[type="date"],
@@ -35,6 +40,7 @@ form select {
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 14px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form input[type="submit"] {
@@ -45,8 +51,10 @@ form input[type="submit"] {
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 form input[type="submit"]:hover {
     background-color: #228B22;
+    font-family: "Comic Sans MS", sans-serif;
 }

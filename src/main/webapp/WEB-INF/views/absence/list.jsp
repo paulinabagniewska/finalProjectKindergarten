@@ -32,6 +32,9 @@
         <td>
         <td> <a href="/absence/add/${absence.id}">Add New Absence</a></td>
     </tr>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

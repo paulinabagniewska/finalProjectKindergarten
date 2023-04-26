@@ -24,6 +24,9 @@
             <td>${absence.child.name} ${absence.child.surname}</td>
         </tr>
     </c:forEach>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

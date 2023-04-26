@@ -26,6 +26,9 @@
         <td><a href="/announcement/add/${announcement.id}">Add New Announcement</a></td>
     </td>
   </tr>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </table>
 </body>
 </html>

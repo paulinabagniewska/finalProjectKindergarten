@@ -32,5 +32,8 @@
         </tr>
     </table>
 </form:form>
+<tr>
+    <td> <a href="/user/loggedIn"> Main Menu </a></td>
+</tr>
 </body>
 </html>

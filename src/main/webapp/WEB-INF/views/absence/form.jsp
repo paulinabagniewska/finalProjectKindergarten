@@ -36,6 +36,9 @@
             <td><input type="submit" value="Submit"/></td>
         </tr>
     </table>
+    <tr>
+        <td> <a href="/user/loggedIn"> Main Menu </a></td>
+    </tr>
 </form:form>
 </body>
 </html>

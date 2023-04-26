@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="/css/registration.css">
 </head>
 <body>
 <form:form method="POST"

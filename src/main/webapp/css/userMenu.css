@@ -4,6 +4,7 @@ body {
 
 h3 {
     text-align: center;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 th, td {
@@ -14,6 +15,7 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 .link-container {
@@ -31,6 +33,7 @@ a {
     transition: background-color 0.3s ease;
     flex: 1;
     margin: 0 5px;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 a:hover {
