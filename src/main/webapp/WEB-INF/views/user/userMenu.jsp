@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/userMenu.css">
 </head>
 <body>
-<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="50%"></center>
 <h3>Welcome to your child's kindergarten app!</h3>
 <h3>Below you can report your child's absence on a given day.</h3>
 <h3>You can also view the menu and announcements.</h3>

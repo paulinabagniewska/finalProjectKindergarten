@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/list.css">
 </head>
 <body>
-<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="50%"></center>
 <table>
     <tr>
         <th>Id</th>
@@ -31,7 +31,7 @@
         </tr>
     </c:forEach>
     <tr>
-        <td><a href="/menu/add/${menu.id}">Add New Menu</a></td>
+        <td><a href="/menu/add">Add New Menu</a></td>
     </tr>
     <tr>
         <td> <a href="/user/loggedIn"> Main Menu </a></td>

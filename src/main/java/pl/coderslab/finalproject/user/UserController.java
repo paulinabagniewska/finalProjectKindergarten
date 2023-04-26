@@ -28,8 +28,13 @@ public class UserController {
     @PostMapping("/add")
     public String saveUser(User user) {
         userDao.saveUser(user, Role.USER);
+        if (user.getPassword().isBlank() || user.getPassword().length()<5){
+        return "user/registartionFailed";
+    }else{
         return "user/registrationSuccessful";
     }
+
+}
 
     @GetMapping("/list")
     public String getList(Model model, HttpSession session) {

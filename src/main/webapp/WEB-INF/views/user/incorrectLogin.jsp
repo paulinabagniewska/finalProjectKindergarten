@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/registration.css">
 </head>
 <body>
-<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="50%"></center>
 <table>
     <tr>
         <td><h3>Incorrect login or password, please  try again! </h3></td>

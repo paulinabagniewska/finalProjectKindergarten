@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
-<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="50%"></center>
 <h3>Welcome, Enter the Absence</h3>
 <form:form method="POST" action="/absence/add" modelAttribute="absence" >
     <table>

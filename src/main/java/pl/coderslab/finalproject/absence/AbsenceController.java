@@ -24,7 +24,7 @@ public class AbsenceController {
 
     @GetMapping("/add")
     public String addAbsence(Model model, HttpSession session) {
-        if (session.getAttribute("role") != null ) {
+        if (session.getAttribute("role") != null) {
             Absence absence = new Absence();
             model.addAttribute("absence", absence);
             model.addAttribute("children", childDao.findAll());
@@ -35,9 +35,13 @@ public class AbsenceController {
     }
 
     @PostMapping("/add")
-    public String saveAbsence(Absence absence) {
+    public String saveAbsence(Absence absence, HttpSession session) {
         absenceDao.saveAbsence(absence);
-        return "redirect:/absence/list";
+        if (session.getAttribute("role") != null && session.getAttribute("role").equals(Role.ADMIN)) {
+            return "redirect:/absence/list";
+        } else {
+            return "redirect:/absence/userList";
+        }
     }
 
     @GetMapping("/list")
@@ -54,11 +58,11 @@ public class AbsenceController {
 
     @GetMapping("/userList")
     public String getUserList(Model model) {
-            List<Absence> absences = absenceDao.findAll();
-            model.addAttribute("absences", absences);
-            model.addAttribute("children", childDao.findAll());
-            return "absence/userList";
-        }
+        List<Absence> absences = absenceDao.findAll();
+        model.addAttribute("absences", absences);
+        model.addAttribute("children", childDao.findAll());
+        return "absence/userList";
+    }
 
 
     @GetMapping("delete/{id}")
