@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/adminMenu.css">
 </head>
 <body>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
 <h3>Welcome in Admin Menu!</h3>
     <h3>Here you can manage your kindergarten.</h3>
         <h3>Below you have the option to manage the data of Parents and Children.</h3>

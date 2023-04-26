@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
 <form:form method="POST"
            action="/group/update"   modelAttribute ="group">
   <table>

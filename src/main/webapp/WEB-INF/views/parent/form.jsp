@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/form.css">
 </head>
 <body>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
 <h3>Welcome, Enter The Parent Details</h3>
 
 <form:form method="POST" action="/parent/add"   modelAttribute ="parent">

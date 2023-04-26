@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="/css/list.css">
 </head>
 <body>
+<center> <img src="/images/kindergartenapp-high-resolution-color-logo.png" width="80%"></center>
 <table>
   <tr>
     <th>Id</th>
